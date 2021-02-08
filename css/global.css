@@ -1,0 +1,30 @@
+:root {
+    --color-primario: #1A1A1D;
+    --color-pimario-light: #4E4E50;
+    --color-secundario: #C3073F;
+    --color-secundario-dark: #950740;
+}
+
+.bg-primario {
+    background-color: var(--color-primario);
+}
+
+.bg-secundario {
+    background-color: var(--color-secundario);
+}
+
+.bg-primario-light {
+    background-color: var(--color-pimario-light);
+}
+
+.text-primario {
+    color: var(--color-primario);
+}
+
+.text-secundario {
+    color: var(--color-secundario);
+}
+
+ul {
+    list-style-type: none;
+}

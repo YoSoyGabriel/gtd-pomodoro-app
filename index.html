@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/temporizador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+    <script src="uikit/dist/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+    <title>GTD-POMODORO</title>
+</head>
+
+<body>
+    <div uk-grid>
+        <div>
+            <!--side menu/ permite navegar por todo la app-->
+            <div class="bg-primario side-menu">
+                <ul class="uk-padding-small">
+                    <li title="Temporizador">
+                        <a href=""><i class="far fa-clock"></i></a>
+                    </li>
+                    <li title="Entrada">
+                        <a href=""><i class="fas fa-inbox"></i></a>
+                    </li>
+                    <li title="Hacer">
+                        <a href=""><i class="fas fa-th-list"></i></a>
+                    </li>
+                    <li title="En espera">
+                        <a href=""><i class="fas fa-user-friends"></i></a>
+                    </li>
+                    <li title="Algun dia">
+                        <a href=""><i class="far fa-calendar-alt"></i></a>
+                    </li>
+                    <li title="Eliminados">
+                        <a href=""><i class="fas fa-trash-alt"></i></a>
+                    </li>
+                    <li class="uk-align-buttom">
+                        <a href=""><i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-contianer uk-width-expand@m">
+            <div class="uk-padding-small uk-margin-small-top">
+                <h2>Temporizador</h2>
+                <hr>
+            </div>
+            <div class="uk-padding uk-margin-top">
+                <di>
+                    <div class="uk-text-center">
+                        <div class="temporizador uk-align-center">
+                            <div class="bar">
+                                <div id="display"></div>
+                            </div>
+                        </div>
+                        <div class="container-btn-temporizador uk-margin-top">
+                            <!-- <button class="uk-button uk-button-small" onclick="editTemporizador()">Editar</button> -->
+                            <button class="uk-button uk-button-medium uk-margin-small-left" style="background-color: rgb(224, 82, 0); color: white;" onclick="reSetTemporizador()">Reiniciar</button>
+                            <button class="uk-button uk-button-medium uk-button-secondary uk-margin-small-left" onclick="startRunningTemporizador()" id="iniciar">Iniciar</button>
+                            <button class="uk-button uk-button-medium uk-button-danger uk-margin-small-left" onclick="stopRunningTemporizador()" id="puasar" hidden>Puasar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!--Editar el temporizador-->
+        <!-- <div class="contianer-edit uk-card uk-card-default uk-align-center " hidden>
+                <h4 class="bg-primario-light uk-padding-small ">Establecer su horario de estudio</h4>
+                <div class="uk-padding-small uk-contianer ">
+                    <div class="uk-flex ">
+                        <div class="box uk-text-center uk-margin-small-left load-number ">
+                            <select>
+                                <option value="0 ">0</option>
+                            </select>
+                        </div>
+                        <div class="box uk-text-center uk-margin-small-left load-number ">
+                            <select>
+                                <option value="0 ">0</option>
+                            </select>
+                        </div>
+                        <div class="box uk-text-center uk-margin-small-left load-number ">
+                            <select>
+                                <option value="0 ">0</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-right uk-margin-top ">
+                        <button class="uk-button uk-button-defaul uk-button-small uk-margin-top ">Cancelar</button>
+                        <button class="uk-button bg-primario-light uk-button-small uk-margin-top uk-margin-small-left ">Iniciar</button>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+    </div>
+
+    <!--modo descanzo activado-->
+    <div class="contianer-rest-mode animate__animated animate__fadeIn " hidden id="restMode">
+        <div class="uk-text-center uk-margin-top ">
+            <img src="./img/koala-sleeping.png " width="460 " alt="Resting mode ">
+            <h2>Tomate un descanzo</h2>
+            <button class="uk-button uk-button-small uk-button-danger " onclick="salirRestMode() ">Parar el Descanzo</button><br>
+
+            <div class="uk-margin-top">
+                <p id="descanzoTime"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/temporizador-script.js "></script>
+    <script src="./js/load-number.js "></script>
+</body>
+
+</html>
